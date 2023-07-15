@@ -1,0 +1,140 @@
+﻿@import "_variables.scss";
+
+//Media Query
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin xlg {
+  @media (min-width: #{$screen-xlg-min}) {
+    @content;
+  }
+}
+
+@mixin xxlg {
+  @media (min-width: #{$screen-xxlg-min}) {
+    @content;
+  }
+}
+
+// font convert to EM
+
+@function em($pixels, $context: $font-main) {
+  @return #{$pixels/$context}em;
+}
+
+// font convert to Rem
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
+
+//flex Mixin
+
+@mixin flexbox($fd, $jc, $ai) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin flexSizes($sizeFlex) {
+  flex: 0 0 $sizeFlex;
+  max-width: $sizeFlex;
+}
+
+/////////////////////
+
+/////////////////
+
+// Placeholders
+
+%flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%buttonContained {
+  width: 100%;
+  height: 50px;
+  border-radius: 50px;
+  color: #FFFFFF;
+  background-color: $colorPrimary;
+  border: 1px solid $colorPrimary;   
+  &:disabled{
+      background-color: #FFFFFF;
+      border: 1px solid #d6d4d4;            
+      color: #d6d4d4;
+  }
+  @include lg{
+    width: 125px;
+  }
+}
+  %buttonOutlined {    
+    width: 100%;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #FFFFFF;
+    border: 1px solid  $colorPrimary;          
+    color:  $colorPrimary;
+    &:disabled{
+      background-color: #FFFFFF;
+      border: 1px solid #d6d4d4;            
+      color: #d6d4d4;
+  }
+  @include lg{
+    width: 80px;
+  }
+  &>svg{
+    width: 20px;
+    height: 20px;
+  }
+ 
+}

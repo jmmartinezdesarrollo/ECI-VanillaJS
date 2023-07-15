@@ -24,13 +24,11 @@
 			let isSelected = item.hasAttribute('selected');
 
 			let itemId = item.getAttribute('id');
-			if (isSelected) {
-				item.style.color = 'initial'
+			if (isSelected) {			
 				item.removeAttribute('selected', false)
 				selectedItems.splice(selectedItems.includes(parseInt(itemId)), 1)
 
-			} else {
-				item.style.color = 'blue'
+			} else {			
 				item.setAttribute('selected', true)
 				selectedItems.push(itemId)
 			}
@@ -62,13 +60,11 @@
 				inputNewValue.value = ''
         li.addEventListener('click', function () {
           let isSelected = li.hasAttribute('selected');
-          if (isSelected) {
-            li.style.color = 'initial'
+          if (isSelected) {        
             li.removeAttribute('selected', false)
             selectedItems.splice(selectedItems.includes(parseInt(itemId)), 1)
     
-          } else {
-            li.style.color = 'blue'
+          } else {          
             li.setAttribute('selected', true)
             selectedItems.push(newId)
           }

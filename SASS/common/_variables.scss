@@ -1,0 +1,43 @@
+﻿//--Layout
+$paddingleft: 15px;
+$paddingright: 15px;
+$paddingbottom: 10px;
+$paddingtop: 10px;
+$border-radius: 10px;
+
+//Font main
+$font-main: 12;
+
+//--Colors
+$colorWhite: #FFFF;
+//Colors__Primary
+$colorPrimary: #324BFF;
+$colorSecundary: #98ce44;
+$colorTertiary: #fdb715;
+
+$colorAlert: #ff4b55;
+$colorBorder: #324BFF;
+$colorBorderBackground: #CCCCCC;
+$colorTitle: #333333;
+$colorText: #333333;
+
+$colorBackground: linear-gradient(135deg, rgb(161, 196, 253) 0%, rgb(194, 233, 251) 100%) 0% 0% no-repeat padding-box padding-box transparent;
+$colorBackgroundComponent: #FFFF;
+$colorBackgroundComponent2: #F7F7F7;
+//normal sparphone
+$screen-smarphone-min: 374px;
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 780px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+$screen-xl-max: 1199px;
+$screen-xlg-min: 1300px;
+$screen-xxlg-min: 1600px;
+$browser-context: 12; // Default
