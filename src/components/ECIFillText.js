@@ -27,8 +27,7 @@
 			HTMLitemsList.append(li)
 		}) 		
 		HTMLitems.forEach((item) => {
-			item.addEventListener('click', function () {
-				let HTMLitems = document.getElementsByName('item')
+			item.addEventListener('click', function () {			
 				let isSelected = item.hasAttribute('selected');
 
 				let itemId = item.getAttribute('id');
@@ -40,22 +39,18 @@
 					item.setAttribute('selected', true)
 					itemSelected.push(itemId)
 				}
-				let isAllSelected = Array.from(HTMLitems.values()).every((_item) => {
-					if (_item.hasAttribute('selected')) {
-						return true;
-
-					}
-				})		
-			//	isAllSelected ? buttonDelete.setAttribute("disabled", true) : buttonDelete.removeAttribute("disabled")
+				buttonStyleDeletItems()	
 			})
-		})
+		
+		})	
+		
 	}
   
+	
 	//Event button add items
 	buttonAdd.addEventListener('click', function () {
 
-		//buttonAdd.setAttribute("disabled", true)		
-	
+
 			let hasValue = inputValue.value != '';
       
 			if (hasValue) {
@@ -66,8 +61,7 @@
 				li.setAttribute('id', newId)
 				li.setAttribute('name', 'item')
 				li.textContent = inputValue.value				
-				inputValue.value = ''
-				HTMLbadgeCached.textContent = itemsCached.length
+				inputValue.value = ''				
         li.addEventListener('click', function () {
           let isSelected = li.hasAttribute('selected');
           if (isSelected) {        
@@ -83,36 +77,38 @@
 					return true;
 
 				}
-			})
-		//	isAllSelected ? buttonDelete.setAttribute("disabled", true) : buttonDelete.removeAttribute("disabled")
+			})		
+			
         })
         HTMLitemsList.append(li)
 			}
 			ECImodal.forEach((_modal)=>{
 				_modal.classList.remove("active")
-			})		
+			})	
+			buttonStyleCached()	
 	})
 
 	//Event button remove items 
 	buttonDelete.addEventListener('click', function () {
 		let HTMLitems = document.getElementsByName('item')
 		itemsCached.push([...items])	
-		
+		buttonStyleCached()
+	
 		HTMLitems.forEach((item) => {
 			itemSelected.forEach((selected) => {
 				if (parseInt(item.id) == selected) {
 					item.remove()
 				}
 			})
-		})
+		})		
+
 		items.forEach((item) => {
 			itemSelected.forEach((selected) => {
 				if (parseInt(item.id) == selected) {
 					item.remove()
 				}
 			})
-		})
-
+		})		
 
 	})
 
@@ -126,6 +122,13 @@
 			firstItem = HTMLitemsList.firstElementChild
 		}
 		showItems()
+		buttonStyleCached()
+	})
+	
+	//Event input new Value
+
+	inputValue.addEventListener('input',function(){
+		buttonStyleAdditems()
 	})
 
 	//Button open/close modal
@@ -144,6 +147,30 @@
 			
 			})
 	})
+	
+
+	// Buttons styles
+
+	let buttonStyleCached = () => {	
+		let isCachedItems = itemsCached.length > 0		
+		isCachedItems ? buttonCached.removeAttribute("disabled") : buttonCached.setAttribute("disabled", true) 
+
+		let isBadgeCached = itemsCached.length > 0
+		isBadgeCached ? (HTMLbadgeCached.textContent = itemsCached.length) : (HTMLbadgeCached.textContent = null)
+	}
+	let buttonStyleAdditems = () => {
+		let isFillInput = inputValue.value != ''
+		isFillInput ? buttonAdd.removeAttribute("disabled") : buttonAdd.setAttribute("disabled", true) 
+	}
+	let buttonStyleDeletItems = () => {	
+		let isAnySelected = Array.from(HTMLitems.values()).some((_item) => {
+			if (_item.hasAttribute('selected')) {
+				return true;
+
+			}
+		})		
+		isAnySelected ? buttonDelete.removeAttribute("disabled") : buttonDelete.setAttribute("disabled", true) 
+	}
 	
 
 	// Add item to fist time

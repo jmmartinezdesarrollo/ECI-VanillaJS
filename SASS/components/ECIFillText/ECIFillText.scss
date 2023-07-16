@@ -73,14 +73,13 @@
             gap: 20px;
             @include lg{
                 flex-direction: row;
-            }
-         
-            & > button{
-             @extend %buttonContained;
+            }         
+            & > button{           
+                @extend %buttonOutlined;               
             }
         }
         & > button{
-            @extend %buttonOutlined;
+            @extend %buttonContained;
         }
     }
 
