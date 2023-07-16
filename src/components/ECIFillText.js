@@ -92,7 +92,7 @@
 	buttonDelete.addEventListener('click', function () {
 		let HTMLitems = document.getElementsByName('item')
 		itemsCached.push([...items])	
-		buttonStyleCached()
+	
 	
 		HTMLitems.forEach((item) => {
 			itemSelected.forEach((selected) => {
@@ -100,7 +100,10 @@
 					item.remove()
 				}
 			})
-		})		
+		})
+				
+		buttonStyleCached()
+		buttonStyleDeletItems()
 
 		items.forEach((item) => {
 			itemSelected.forEach((selected) => {
@@ -152,7 +155,7 @@
 	// Buttons styles
 
 	let buttonStyleCached = () => {	
-		let isCachedItems = itemsCached.length > 0		
+		let isCachedItems = itemsCached.length > 0			
 		isCachedItems ? buttonCached.removeAttribute("disabled") : buttonCached.setAttribute("disabled", true) 
 
 		let isBadgeCached = itemsCached.length > 0
@@ -162,13 +165,13 @@
 		let isFillInput = inputValue.value != ''
 		isFillInput ? buttonAdd.removeAttribute("disabled") : buttonAdd.setAttribute("disabled", true) 
 	}
-	let buttonStyleDeletItems = () => {	
+	let buttonStyleDeletItems = () => {		
 		let isAnySelected = Array.from(HTMLitems.values()).some((_item) => {
 			if (_item.hasAttribute('selected')) {
 				return true;
 
 			}
-		})		
+		})			
 		isAnySelected ? buttonDelete.removeAttribute("disabled") : buttonDelete.setAttribute("disabled", true) 
 	}
 	

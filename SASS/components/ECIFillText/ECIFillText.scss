@@ -73,9 +73,12 @@
             gap: 20px;
             @include lg{
                 flex-direction: row;
-            }         
+            }          
             & > button{           
                 @extend %buttonOutlined;               
+            }
+            & > button:nth-child(2){
+                width: 150px
             }
         }
         & > button{
