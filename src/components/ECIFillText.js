@@ -49,8 +49,7 @@
 	
 	//Event button add items
 	buttonAdd.addEventListener('click', function () {
-
-
+		
 			let hasValue = inputValue.value != '';
       
 			if (hasValue) {
@@ -72,12 +71,7 @@
             li.setAttribute('selected', true)
             itemSelected.push(newId)
           }
-          			let isAllSelected = Array.from(HTMLitems.values()).every((_item) => {
-				if (_item.hasAttribute('selected')) {
-					return true;
 
-				}
-			})		
 			
         })
         HTMLitemsList.append(li)
@@ -136,7 +130,8 @@
 
 	//Button open/close modal
 	openModal.forEach((modal)=>{
-			modal.addEventListener('click', function () {					
+			modal.addEventListener('click', function () {	
+				buttonStyleAdditems()				
 				let isActive = ECImodal[0].classList.contains("active");
 				if(isActive){
 					ECImodal.forEach((_modal)=>{
@@ -162,7 +157,7 @@
 		isBadgeCached ? (HTMLbadgeCached.textContent = itemsCached.length) : (HTMLbadgeCached.textContent = null)
 	}
 	let buttonStyleAdditems = () => {
-		let isFillInput = inputValue.value != ''
+		let isFillInput = inputValue.value.length > 0
 		isFillInput ? buttonAdd.removeAttribute("disabled") : buttonAdd.setAttribute("disabled", true) 
 	}
 	let buttonStyleDeletItems = () => {		
