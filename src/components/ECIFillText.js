@@ -37,7 +37,7 @@
 
 				} else {			
 					item.setAttribute('selected', true)
-					itemSelected.push(itemId)
+					itemSelected.push(parseInt(itemId))
 				}
 				buttonStyleDeletItems()	
 			})
@@ -84,28 +84,26 @@
 
 	//Event button remove items 
 	buttonDelete.addEventListener('click', function () {
-		let HTMLitems = document.getElementsByName('item')
-		itemsCached.push([...items])	
-	
-	
-		HTMLitems.forEach((item) => {
-			itemSelected.forEach((selected) => {
-				if (parseInt(item.id) == selected) {
+		itemsCached.push([...items])
+			
+		let _HTMLitems =[...HTMLitems]
+		let _itemSelected = [...itemSelected]
+		let _items = [...items]
+
+		_HTMLitems.forEach((item) => {
+			_itemSelected.forEach((id) => {			
+				if (parseInt(item.id) === parseInt(id)) {				
 					item.remove()
 				}
 			})
 		})
 				
+		items = _items.filter((item) => {
+			   return !_itemSelected.includes(item.id)
+		})		
+
 		buttonStyleCached()
 		buttonStyleDeletItems()
-
-		items.forEach((item) => {
-			itemSelected.forEach((selected) => {
-				if (parseInt(item.id) == selected) {
-					item.remove()
-				}
-			})
-		})		
 
 	})
 
