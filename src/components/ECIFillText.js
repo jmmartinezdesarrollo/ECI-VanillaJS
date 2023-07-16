@@ -40,14 +40,14 @@
 
 				}
 			})
-			isAllSelected ? buttonDelete.setAttribute("disabled", true) : buttonDelete.removeAttribute("disabled")
+		//	isAllSelected ? buttonDelete.setAttribute("disabled", true) : buttonDelete.removeAttribute("disabled")
 		})
 	})
   
 	//Button add item
 	buttonAdd.addEventListener('click', function () {
 
-		buttonAdd.setAttribute("disabled", true)
+		//buttonAdd.setAttribute("disabled", true)
 		let li = document.createElement('li');
 	
 			let hasValue = inputNewValue.value != '';
@@ -76,15 +76,17 @@
 
 				}
 			})
-			isAllSelected ? buttonDelete.setAttribute("disabled", true) : buttonDelete.removeAttribute("disabled")
+		//	isAllSelected ? buttonDelete.setAttribute("disabled", true) : buttonDelete.removeAttribute("disabled")
         })
         ul.append(li)
 			}
-			ECImodal[0].classList.remove("active")
+			ECImodal.forEach((_modal)=>{
+				_modal.classList.remove("active")
+			})		
 		})
 
 
-	//Button remove event
+	//Button remove items event
 	buttonDelete.addEventListener('click', function () {
 		let items = document.getElementsByName('item')
 		items.forEach((item) => {
