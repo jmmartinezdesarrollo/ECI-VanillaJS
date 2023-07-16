@@ -45,7 +45,7 @@
             @extend %buttonContained;
         }
         &>button:nth-child(2){            
-            @extend %buttonOutlined;
+            @extend %buttonOutlinedBasket;
             width: 120px;
         }
     }
