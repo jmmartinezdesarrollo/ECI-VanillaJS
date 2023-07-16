@@ -2,11 +2,16 @@
   "common/fluid-font", "components/ECIFillText/ECIFillText", "components/ECIModal/ECIModal";
 
   body{ 
-    padding: 0 10px;
-    height: 100vh;
-    @extend %flexColumn; 
+    padding: 10px;   
     background: $colorBackground;
     font-family: Montserrat;
+    @include lg{
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   
