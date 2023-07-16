@@ -5,6 +5,8 @@
     background-color:$colorBackgroundComponent;
     padding: 20px;
     border-radius: 20px;
+    max-width: 900px;
+    margin: 0 auto;
     @include lg{
         gap: 35px;
         padding: 50px;
@@ -74,11 +76,11 @@
             }
          
             & > button{
-             @extend %buttonContained
+             @extend %buttonContained;
             }
         }
         & > button{
-            @extend %buttonOutlined
+            @extend %buttonOutlined;
         }
     }
 

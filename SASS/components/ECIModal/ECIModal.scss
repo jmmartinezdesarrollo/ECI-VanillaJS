@@ -1,0 +1,65 @@
+.ECIModal{
+    display: none;
+    position: absolute;
+    top: 10%;
+    width: 300px;
+    padding: 20px;
+    background-color: $colorWhite;
+    box-shadow: 0px 10px 24px #0000001F;
+    border-radius: 20px;    
+    z-index: 51;
+    @extend %flexColumn;     
+    align-items: flex-start;
+    gap:20px;
+    @include lg{
+        width: 700px;
+        padding: 50px;
+    }
+    &>h2{
+        font-size: 18px;
+        color: $colorText;
+        font-weight: 500;
+    }
+    &>input{
+       width: 100%;
+       height:  60px;
+       background-color: $colorBackgroundComponent2; 
+       border: 1px solid #CCCCCC;
+       padding-left: 20px;
+       font-size: 18px;
+       &:focus{
+        border: 1px solid  $colorBorder;
+       }
+       &::placeholder{
+        font-size: 16px;
+        padding-left: 15px;
+       }
+    }
+    &>div{
+       
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        &>button:nth-child(1){
+            @extend %buttonContained;
+        }
+        &>button:nth-child(2){            
+            @extend %buttonOutlined;
+            width: 120px;
+        }
+    }
+    &__background{
+        display: none;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        background-color: #9595953d;
+        z-index: 50;
+    }
+}
+
+.active{
+    display: flex;
+}

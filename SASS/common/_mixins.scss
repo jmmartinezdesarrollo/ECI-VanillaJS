@@ -107,8 +107,10 @@
   border-radius: 50px;
   color: #FFFFFF;
   background-color: $colorPrimary;
-  border: 1px solid $colorPrimary;   
+  border: 1px solid $colorPrimary;  
+  cursor: pointer; 
   &:disabled{
+    cursor: not-allowed;
       background-color: #FFFFFF;
       border: 1px solid #d6d4d4;            
       color: #d6d4d4;
@@ -124,7 +126,9 @@
     background-color: #FFFFFF;
     border: 1px solid  $colorPrimary;          
     color:  $colorPrimary;
+    cursor: pointer;
     &:disabled{
+      cursor: not-allowed;
       background-color: #FFFFFF;
       border: 1px solid #d6d4d4;            
       color: #d6d4d4;

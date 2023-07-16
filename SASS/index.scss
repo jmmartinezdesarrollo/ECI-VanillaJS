@@ -1,9 +1,7 @@
 ﻿@import "common/variables", "common/mixins", "common/reset", "common/container",
   "common/fluid-font", "components/ECIFillText/ECIFillText", "components/ECIModal/ECIModal";
 
-  body{
-    max-width: 1300px;
-    margin: 0 auto;
+  body{ 
     padding: 0 10px;
     height: 100vh;
     @extend %flexColumn; 

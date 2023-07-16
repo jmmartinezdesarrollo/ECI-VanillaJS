@@ -5,6 +5,8 @@
 	const inputNewValue = document.getElementById("input-newValue")
 	const buttonAdd = document.getElementById('addItem')
 	const buttonDelete = document.getElementById('deleteItem')
+	const openModal = document.getElementsByName('openModal')
+	let ECImodal = document.getElementsByName('modal')
 	let memory = []
 	let selectedItems = []
 
@@ -78,6 +80,7 @@
         })
         ul.append(li)
 			}
+			ECImodal[0].classList.remove("active")
 		})
 
 
@@ -94,4 +97,22 @@
 
 
 	})
+ 
 
+		//Button open modal
+		openModal.forEach((modal)=>{
+			modal.addEventListener('click', function () {					
+				let isActive = ECImodal[0].classList.contains("active");
+				if(isActive){
+					ECImodal.forEach((_modal)=>{
+						_modal.classList.remove("active")
+					})				
+				}else{
+					ECImodal.forEach((_modal)=>{
+						_modal.classList.add("active")
+					})			
+				}
+			
+			})
+		})
+	
