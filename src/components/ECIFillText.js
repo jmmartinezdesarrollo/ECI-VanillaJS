@@ -109,17 +109,17 @@
 	})
 
 	//Even button cached items
-	buttonCached.addEventListener('click', function(){		
-		items = [...itemsCached[itemsCached.length -1]]
-		itemsCached.pop()	
-		let firstItem = HTMLitemsList.firstElementChild
-		while(firstItem ){
-			firstItem.remove()
-			firstItem = HTMLitemsList.firstElementChild
-		}
-		showItems()
-		buttonStyleCached()
-	})
+	buttonCached.addEventListener("click", function () {
+    items = [...itemsCached[itemsCached.length - 1]];
+    itemsCached.pop();
+    let firstItem = HTMLitemsList.firstElementChild;
+    while (firstItem) {
+      firstItem.remove();
+      firstItem = HTMLitemsList.firstElementChild;
+    }
+    showItems();
+    buttonStyleCached();
+  });
 	
 	//Event input new Value
 
@@ -128,22 +128,21 @@
 	})
 
 	//Button open/close modal
-	openModal.forEach((modal)=>{
-			modal.addEventListener('click', function () {	
-				buttonStyleAdditems()				
-				let isActive = ECImodal[0].classList.contains("active");
-				if(isActive){
-					ECImodal.forEach((_modal)=>{
-						_modal.classList.remove("active")
-					})				
-				}else{
-					ECImodal.forEach((_modal)=>{
-						_modal.classList.add("active")
-					})			
-				}
-			
-			})
-	})
+	openModal.forEach((modal) => {
+    modal.addEventListener("click", function () {
+      buttonStyleAdditems();
+      let isActive = ECImodal[0].classList.contains("active");
+      if (isActive) {
+        ECImodal.forEach((_modal) => {
+          _modal.classList.remove("active");
+        });
+      } else {
+        ECImodal.forEach((_modal) => {
+          _modal.classList.add("active");
+        });
+      }
+    });
+  });
 	
 
 	// Buttons styles
