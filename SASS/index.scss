@@ -1,17 +1,6 @@
 ﻿@import "common/variables", "common/mixins", "common/reset", "common/container",
   "common/fluid-font", "components/ECIFillText/ECIFillText", "components/ECIModal/ECIModal";
 
-  body{ 
-    padding: 10px;   
-    background: $colorBackground;
-    font-family: Montserrat;
-    @include lg{
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
+
 
   

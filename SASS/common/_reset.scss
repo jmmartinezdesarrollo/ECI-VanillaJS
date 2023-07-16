@@ -107,15 +107,21 @@ section {
 }
 
 body {
-  line-height: 1;
-  font-size: 12px;
-  font-family: "lato", sans-serif;
+  background: $colorBackground;
+  font-family: Montserrat;
   position: relative;
   min-width: 350px;
+  height: 100vh;
   @include lg {
     overflow: hidden;
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+}
+main{
+  padding: 10px;;
 }
 
 html {
