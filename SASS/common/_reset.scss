@@ -156,15 +156,16 @@ table {
 }
 
 p {
-  letter-spacing: 0.68px;
-  line-height: 21.9px;
+
   margin: 0px;
 }
 
 h2,
 h3,
 h4 {
-  letter-spacing: 0.56px;
-  line-height: 17.5px;
   margin: 0px;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../../src/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
