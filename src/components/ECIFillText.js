@@ -71,7 +71,7 @@
             li.setAttribute('selected', true)
             itemSelected.push(newId)
           }
-
+		  buttonStyleDeletItems()
 			
         })
         HTMLitemsList.append(li)
@@ -80,6 +80,7 @@
 				_modal.classList.remove("active")
 			})	
 			buttonStyleCached()	
+		
 	})
 
 	//Event button remove items 
